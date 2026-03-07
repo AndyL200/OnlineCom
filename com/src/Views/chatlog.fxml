@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" styleClass="chatlog-container">
+  <center>
+    <ScrollPane fitToWidth="true">
+      <content>
+        <VBox fx:id="messagesBox" spacing="8"/>
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+          </padding>
+      </content>
+    </ScrollPane>
+  </center>
+  <bottom>
+    <HBox spacing="8">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+      </padding>
+      <children>
+        <TextField fx:id="messageField" HBox.hgrow="ALWAYS" promptText="Type a message"/>
+        <Button text="Send"/>
+      </children>
+    </HBox>
+  </bottom>
+</BorderPane>

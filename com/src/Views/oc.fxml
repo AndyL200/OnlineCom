@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.SceneController" styleClass="main-container">
+  <children>
+    <Label text="Hello, World!"/>
+    <VBox styleClass="sidebar">
+      <children>
+        <Label text="Nested"/>
+      </children>
+    </VBox>
+    <VBox  fx:id="chatContainer" styleClass="chat-container">
+      <children>
+        <Label text="Nested"/>
+        <fx:include source="navbar.fxml"/>
+        <fx:include source="chatlog.fxml"/>
+      </children>
+    </VBox>
+    
+  </children>
+</HBox>
