@@ -1,40 +1,34 @@
 import java.io.IOException;
 import java.util.*;
 
-import Controllers.SceneController;
-
+import Components.Scenes.PrimaryScene;
+import Controllers.SceneHandler;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import Network.ServerCache;
 
 public class Main extends Application {
+    SceneHandler controller;
     public static void main(String[] args) {
+        //grab server cache from disk
+
         Application.launch(args);
     }
 
     @Override
     public void start(Stage stage) {
+        
         stage.setTitle("OnlineCom");
-        Scene fxscene = null;
-        //load resources
-        try {
-            HBox hbox = FXMLLoader.load(getClass().getResource("/Views/oc.fxml"));
-            fxscene = new Scene(hbox, 800, 600);
-            //stage.getIcons().add(new Image("../assets/icon.png"));
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+        this.controller = new SceneHandler(stage, new PrimaryScene(800, 600));
 
-        stage.setScene(fxscene);
         stage.show();
     }
 }
